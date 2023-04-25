@@ -204,7 +204,7 @@ namespace BBQInschrivingen.API.Managers
 			ticketHtml += "---------------------------------------------------------------------------------------------------------------<br/>";
 			ticketHtml += @"<b>Begunstigde:</b> Instituut van het Heilig-Graf <br/>";
 			ticketHtml += @"<b>Rekeningnummer:</b> BE18 7330 3207 1765 <br/>";
-			ticketHtml += @"<b>Vrije vermelding:</b> BBQ internaat + naam interne(indien geen link met de interne gewoon de eigen naam) <br/>";
+			ticketHtml += @"<b>Vrije vermelding:</b> BBQ internaat + naam interne (indien geen link met de interne gewoon de eigen naam) <br/>";
 			ticketHtml += @"<b>Te betalen voor:</b> 23 mei 2023 <br/>";
 			ticketHtml += "---------------------------------------------------------------------------------------------------------------<br/>";
 			ticketHtml += "---------------------------------------------------------------------------------------------------------------<br/>";

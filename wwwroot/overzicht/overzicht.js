@@ -171,24 +171,28 @@ downloadTicket = (inschrijving) => {
 }
 
 deleteInschrijving = (rowId) => {
-	let inschrijving = JSON.parse($("#inschrijving-" + rowId).val());
-	let data = { 'password': $("#password").val(), 'model': inschrijving.id };
+	if (confirm("Weet u zeker dat u deze inschrijving wilt verwijderen? Een verwijdering is permanent?")) {
+		let inschrijving = JSON.parse($("#inschrijving-" + rowId).val());
+		let data = { 'password': $("#password").val(), 'model': inschrijving.id };
 
-	$.ajax({
-		url: '../BBQInschrijvingen/DeleteInschrijving',
-		method: 'POST',
-		data: JSON.stringify(data),
-		contentType: 'application/json',
-		success: (response) => {
-			if (response.success) {
+		$.ajax({
+			url: '../BBQInschrijvingen/DeleteInschrijving',
+			method: 'POST',
+			data: JSON.stringify(data),
+			contentType: 'application/json',
+			success: (response) => {
+				if (response.success) {
 
-				$('#tbl-overzicht').DataTable().clear().destroy();
-				this.getInschrijvingen();
-			} else {
-				alert('Verwijderen mislukt: ' + response.message);
+					$('#tbl-overzicht').DataTable().clear().destroy();
+					this.getInschrijvingen();
+				} else {
+					alert('Verwijderen mislukt: ' + response.message);
+				}
 			}
-		}
-	});
+		});
+	} else {
+
+	}
 }
 
 updateInschrijving = (rowId) => {
