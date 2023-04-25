@@ -46,17 +46,17 @@ getInschrijvingen = () =>
 				totaalSates += aantalSates;
 
 				var aantalVeggieBurgers = (inschrijvingen[i].formule3.hamburgers != null ? inschrijvingen[i].formule3.hamburgers : 0) +
-					(inschrijvingen[i].formule2.hamburgers != null ? inschrijvingen[i].formule2.hamburgers : 0);
+					(inschrijvingen[i].formule4.hamburgers != null ? inschrijvingen[i].formule4.hamburgers : 0);
 
 				totaalVeggieBurger += aantalVeggieBurgers;
 
 				var aantalVeggieWorsten = (inschrijvingen[i].formule3.worsten != null ? inschrijvingen[i].formule3.worsten : 0) +
-					(inschrijvingen[i].formule2.worsten != null ? inschrijvingen[i].formule2.worsten : 0);
+					(inschrijvingen[i].formule4.worsten != null ? inschrijvingen[i].formule4.worsten : 0);
 
 				totaalVeggieWorsten += aantalVeggieWorsten;
 
 				var aantalVeggieBalletjes = (inschrijvingen[i].formule3.balletjes != null ? inschrijvingen[i].formule3.balletjes : 0) +
-					(inschrijvingen[i].formule2.balletjes != null ? inschrijvingen[i].formule2.balletjes : 0);
+					(inschrijvingen[i].formule4.balletjes != null ? inschrijvingen[i].formule4.balletjes : 0);
 
 				totaalVeggieBalletjes += aantalVeggieBalletjes;
 				totaalAantalPersonen += inschrijvingen[i].aantalPersonen;
