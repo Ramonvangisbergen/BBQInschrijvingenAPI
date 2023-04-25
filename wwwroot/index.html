@@ -1,0 +1,361 @@
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+		<link href="index.css" rel="stylesheet"/>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+		
+	</head>
+	<body>
+		<div class="container-fluid container-main">
+			<div>
+				<h1>Barbecue Internaat Heilig Graf Turnhout</h1>
+				<br />
+				<h2>Inschrijven</h2>
+				<p>Wij nodigen graag iedereen uit op onze jaarlijkse BBQ op woensdag 24 mei. Iedereen is welkom! Familie, vrienden, leerkrachten, klasgenoten,... Om 15u openen wij onze deuren zodat u al iets kan drinken. U kan het internaat ook bezoeken op dat moment. Vanaf 17u is de barbeque gloeiend heet en kan u genieten van een heerlijke maaltijd. De opbrengst van de BBQ willen we gebruiken om &eacute;&eacute;n van onze livings om te bouwen tot multifunctionele ruimte met reuzescherm voor film e.d.</p>
+				<p>Via onderstaand formulier kan u uw bestelling doorgeven en geeft u aan hoe laat u graag start met eten.</p>
+				<p><b><i>De internen moeten niet inschrijven langs deze weg. Dat wordt in het internaat zelf geregeld.</i></b></p>
+				<br />
+				<h2>Betalen</h2>
+				<p>U kan het bedrag storten op rek.nr. <b>BE18 7330 3207 1765</b> t.a.v. Instituut van het Heilig-Graf met vermelding van: <b>BBQ internaat + naam interne</b> (indien geen link met de interne gewoon de eigen naam). </p>
+				<p><b>Stortingen dienen te gebeuren voor 23 mei</b>. Gepast betalen kan ook, voordien af te geven bij de opvoeders of bij inkom. (ook payconinc aan inkom)</p>
+				<p>Ingang Baron Du Fourstraat poort D, mogelijkheid tot parkeren poort E.</p>
+
+			</div>
+			<br />
+			<h2>Menu</h2>
+			<hr />
+			<table class="table">
+				<tbody>
+					<tr>
+						<th class="text-align">Vlees</th>
+						<td></td>
+						<th class="text-align">Vegetarisch</th>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Formule 1</th>
+						<td>3 stukken vlees + uitgebreid groentenbuffet = &#8364;18</td>
+						<th> Formule 3</th>
+						<td>3 stukken veggie + uitgebreid groentenbuffet = &#8364;18</td>
+					</tr>
+					<tr>
+						<th>Formule 2</th>
+						<td>2 stukken vlees + uitgebreid groentenbuffet = &#8364;15</td>
+						<th> Formule 4</th>
+						<td>2 stukken veggie + uitgebreid groentenbuffet = &#8364;15</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Inschrijvingsformulier</h2>
+			<hr />
+			<form id="frmBbq" action="onSubmit(event)" target="dummyframe">
+				<div class="row">
+					<label class="col-2" for="naam">Naam:</label>
+					<input class="col-3" type="text" id="naam" name="naam" required />
+				</div>
+				<br />
+
+				<div class="row">
+					<label class="col-2" for="naam-interne">Eventueel naam interne:</label>
+					<input class="col-3" type="text" id="naam-interne" name="naam-interne" />
+				</div>
+				<br />
+
+				<p>Schrijft zich in voor de barbecue voor <input type="number" class="input-number" min="1" id="aantal-personen" name="aantal-personen" required /> personen. <b>(Interne niet bijtellen!)</b> </p>
+
+
+				<div class="row">
+					<div class="col-4">
+						<p>Gelieve aan te duiden wanneer u wil komen eten:</p>
+					</div>
+					<div class="col-5">
+						<div class="row">
+							<div class="col-4">
+								<input type="radio" id="17u00" name="reservatie" value="17u00" required>
+								<label for="17u">rond 17u</label>
+							</div>
+							<div class="col-4">
+								<input type="radio" id="18u00" name="reservatie" value="18u00">
+								<label for="18u">rond 18u</label>
+							</div>
+							<div class="col-4">
+								<input type="radio" id="19u00" name="reservatie" value="19u00">
+								<label for="19u">rond 19u</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr />
+				<br />
+
+				<div class="row">
+					<div class="col-6 border-right">
+						<label class="col title"><b>VLEES</b></label>
+					</div>
+					<div class="col-6">
+						<label class="col title"><b>VEGETARISCH</b></label>
+					</div>
+				</div>
+				<div class="row">
+
+					<div class="col-6 border-right">
+						<div class="row">
+							<label class="col"><b>Formule 1:</b> 3 snacks p.p. (vlees):</label>
+						</div>
+						<br />
+						<div class="row">
+							<label class="col-2" for="aantal-formule-1">Aantal:</label>
+							<input class="formule-aantal col-2 input-number" data-price="18" data-snacks="3" type="number" min="0" id="aantal-formule-1" name="aantal-formule-1" />
+							<span class="col-2"> x &#8364;18 = </span>
+							<div class="col-2 input-icon input-icon-left">
+								<input class="formule-totaal" type="number" min="0" id="totaal-formule-1" name="totaal-formule-1" disabled />
+								<i>&#8364;</i>
+							</div>
+						</div>
+						<hr />
+						<br />
+						<div class="snack-container">
+							<div class="row">
+								<label class="col-2">Snacks:</label>
+								<input class="snack input-number col-2" type="number" onchange="snackOnChange(event)" data-parent="aantal-formule-1" min="0" id="formule-1-hamburger" name="formule-1-hamburger" disabled />
+								<label for="formule-1-hamburger" class="col"> x hamburger </label>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" data-parent="aantal-formule-1" min="0" id="formule-1-kipfilet" name="formule-1-kipfilet" disabled />
+								<label for="formule-1-kipfilet" class="col"> x gemarineerde kipfilet </label>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" data-parent="aantal-formule-1" min="0" id="formule-1-worst" name="formule-1-worst" disabled />
+								<span class="col"> x BBQ-worst </span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-1" id="formule-1-sate" name="formule-1-sate" disabled />
+								<span class="col-2"> x sat&eacute;</span>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="error" id="aantal-formule-1-message"></div>
+						</div>
+						<hr />
+					</div>
+					<div class="col-6">
+						<div class="row">
+							<label class="col"><b>Formule 3:</b> 3 snacks p.p. (vegetarisch):</label>
+						</div>
+						<br />
+						<div class="row">
+							<label class="col-2" for="formule-3">Aantal: </label>
+							<input class="formule-aantal input-number col-2" type="number" data-price="18" data-snacks="3" min="0" id="aantal-formule-3" name="aantal-formule-3" />
+							<span class="col-2"> x &#8364;18 = </span>
+							<div class="col-2 input-icon input-icon-left">
+								<input class="formule-totaal " type="number" min="0" id="totaal-formule-3" name="totaal-formule-3" disabled />
+								<i>&#8364;</i>
+							</div>
+						</div>
+						<hr />
+						<br />
+						<div class="snack-container">
+							<div class="row">
+								<label class="col-2">Snacks:</label>
+								<input class="snack input-number col-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-3" id="formule-3-hamburger" name="formule-3-hamburger" disabled />
+								<span class="col"> x veggie hamburger </span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-3" id="formule-3-worst" name="formule-3-worst" disabled />
+								<span class="col"> x veggie worst </span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-3" id="formule-3-balletjes" name="formule-3-balletjes" disabled />
+								<span class="col"> x veggie balletjes op een stokje </span>
+							</div>
+							<br />
+
+						</div>
+						<div class="row">
+							<div class="error" id="aantal-formule-3-message"></div>
+						</div>
+						<hr />
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-6 border-right">
+						<div class="row">
+							<label class="col"><b>Formule 2:</b> 2 snacks p.p. (vlees):</label>
+						</div>
+						<br />
+						<div class="row">
+							<label class="col-2" for="formule-2">Aantal:</label>
+							<input class="formule-aantal input-number col-2" type="number" min="0" data-price="15" data-snacks="2" id="aantal-formule-2" name="aantal-formule-2" />
+							<span class="col-2"> x &#8364;15 = </span>
+							<div class="col-2 input-icon input-icon-left">
+								<input class="formule-totaal " type="number" min="0" id="totaal-formule-2" name="totaal-formule-2" disabled />
+								<i>&#8364;</i>
+							</div>
+						</div>
+						<hr />
+						<br />
+						<div class="snack-container">
+							<div class="row">
+								<label class="col-2">Snacks:</label>
+								<input class="snack input-number col-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-2" id="formule-2-hamburger" name="formule-2-hamburger" disabled />
+								<span class="col"> x hamburger </span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-2" id="formule-2-kipfilet" name="formule-2-kipfilet" disabled />
+								<span class="col"> x gemarineerde kipfilet </span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-2" id="formule-2-worst" name="formule-2-worst" disabled />
+								<span class="col"> x BBQ-worst </span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-2" id="formule-2-sate" name="formule-2-sate" disabled />
+								<span class="col"> x sat&eacute; </span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="error" id="aantal-formule-2-message"></div>
+						</div>
+						<hr />
+					</div>
+
+					<div class="col-6">
+						<div class="row">
+							<label class="col"><b>Formule 4:</b> 2 snacks p.p. (vegetarisch):</label>
+						</div>
+						<br />
+						<div class="row">
+							<label class="col-2" for="formule-4">Aantal:</label>
+							<input class="formule-aantal input-number col-2" type="number" min="0" data-price="15" data-snacks="2" id="aantal-formule-4" name="aantal-formule-4" />
+							<span class="col-2"> x &#8364;15 = </span>
+							<div class="col-2 input-icon input-icon-left">
+								<input class="formule-totaal " type="number" min="0" id="totaal-formule-4" name="totaal-formule-4" disabled />
+								<i>&#8364;</i>
+							</div>
+						</div>
+						<hr />
+						<br />
+						<div class="snack-container">
+							<div class="row">
+								<label class="col-2">Snacks:</label>
+								<input class="snack input-number col-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-4" id="formule-4-hamburger" name="formule-4-hamburger" disabled />
+								<span class="col"> x veggie hamburger </span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-4" id="formule-4-worst" name="formule-4-worst" disabled />
+								<span class="col"> x veggie worst</span>
+							</div>
+							<br />
+
+							<div class="row">
+								<input class="snack input-number col-2 offset-2" type="number" onchange="snackOnChange(event)" min="0" data-parent="aantal-formule-4" id="formule-4-balletjes" name="formule-4-balletjes" disabled />
+								<span class="col"> x veggie balletjes op een stokje</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="error" id="aantal-formule-4-message"></div>
+						</div>
+						<hr />
+					</div>
+				</div>
+				<hr />
+				<br />
+				<br />
+
+				<p><b>U kan ook nog een dessertje bestellen. Maak hieronder uw keuze!</b></p>
+
+				<div class="row">
+					<label class="col-2" for="chocomousse">Chocomousse:</label>
+					<input class="dessert-aantal input-number col-1" type="number" min="0" id="chocomousse" name="chocomousse" />
+					<span class="col-1">x &#8364;1 = </span>
+					<div class="col-1 input-icon input-icon-left">
+						<input class="dessert-totaal" type="number" min="0" id="totaal-chocomousse" name="totaal-chocomousse" disabled />
+						<i>&#8364;</i>
+					</div>
+				</div>
+				<br />
+
+				<div class="row">
+					<label class="col-2" for="rijstpap">Rijstpap:</label>
+					<input class="dessert-aantal input-number col-1" type="number" min="0" id="rijstpap" name="rijstpap" />
+					<span class="col-1">x &#8364;1 = </span>
+					<div class="col-1 input-icon input-icon-left">
+						<input class="dessert-totaal" type="number" min="0" id="totaal-rijstpap" name="totaal-rijstpap" disabled />
+						<i>&#8364;</i>
+					</div>
+				</div>
+				<br />
+
+				<div class="row">
+					<label class="col-2" for="dame-blanche">Dame blanche:</label>
+					<input class="dessert-aantal input-number col-1" type="number" min="0" id="dame-blanche" name="dame-blanche" />
+					<span class="col-1">x &#8364;1 = </span>
+					<div class="col-1 input-icon input-icon-left">
+						<input class="dessert-totaal" type="number" min="0" id="totaal-dame-blanche" name="totaal-dame-blanche" disabled />
+						<i>&#8364;</i>
+					</div>
+				</div>
+				<br />
+
+				<div class="row">
+					<label class="col-2" for="totaal-desserten"><b>Totaal Desserten: </b></label>
+					<div class="dessert-totaal-prijs col-1 col-offset-2 input-icon input-icon-left">
+						<input type="number" min="0" id="totaal-desserten" name="totaal-desserten" disabled />
+						<i>&#8364;</i>
+					</div>
+				</div>
+
+				<hr />
+				<br />
+
+				<div class="row">
+					<span class="col-3"><b>Totaal te betalen (BBQ + dessert):</b></span>
+					<div class="col-2 input-icon input-icon-left">
+						<input type="number" min="0" id="totaal-bbq" name="totaal-bbq" disabled />
+						<i>&#8364;</i>
+					</div>
+				</div>
+				<br />
+				<br />
+				<div class="row">
+					<button class="btn btn-primary col-2" type="submit">Inschrijving versturen</button>
+				</div>
+				<br />
+				<br />
+				<div class="row">
+					<div class="col" id="form-msg"></div>
+				</div>
+				<hr />
+
+			</form>
+		</div>
+
+		<input type="hidden" id="inschrijving" />
+
+
+
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="index.js"></script>
+	</body>
+</html>

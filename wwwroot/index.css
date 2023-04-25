@@ -1,0 +1,84 @@
+.container-main {
+	padding:50px;
+}
+
+.snack-container {
+	height: 15rem;
+}
+
+.dessert-totaal-prijs {
+	padding-left:0 !important;
+}
+
+.radio-group {
+	margin-left: 2em;
+}
+
+.error {
+	color:red;
+	font-weight:bold;
+
+}
+
+.succes {
+	color:green;
+	font-weight:bold;
+}
+
+.error, .succes {
+	height: 2em;
+}
+
+.border-right {
+	border-right:0.1em solid black;
+}
+
+.table{
+	margin-bottom:4em !important;
+}
+
+.input-number {
+    width: 4em;
+}
+
+input:invalid {
+  border: 0.01em solid red;
+}
+
+input:valid {
+  border: 0.01em solid gray;
+}
+
+.title {
+	font-weight: bold;
+	font-size:1.5em;
+	margin-bottom:1.5em;
+	border-bottom:0.1em solid black;
+}
+
+.input-icon {
+	position: relative;
+  }
+  
+.input-icon > i {
+	position: absolute;
+	display: block;
+	transform: translate(0, -50%);
+	top: 50%;
+	pointer-events: none;
+	width: 25px;
+	text-align: center;
+	font-style: normal;
+}
+
+.input-icon > input {
+	padding-left: 25px;
+	padding-right: 0;
+	width: 5em;
+}
+
+.input-icon-left > input {
+	padding-right: 0;
+	padding-left: 25px;
+	text-align: left;
+}
