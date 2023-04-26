@@ -57,7 +57,7 @@ setOnFormuleAantalChange = () =>
 
 setOnDessertAantalChange = () => 
 {
-	$(".snack").each((i, dessertInput) => 
+	$(".dessert-aantal").each((i, dessertInput) => 
 		{		
 			dessertInput.addEventListener("change", (event) => 
 			{			
