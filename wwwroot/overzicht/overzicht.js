@@ -66,6 +66,7 @@ getInschrijvingen = () =>
 				totaalChocomousses += inschrijvingen[i].desserten.chocomousses ? inschrijvingen[i].desserten.chocomousses : 0;
 				totaalRijstpappen += inschrijvingen[i].desserten.rijstpappen ? inschrijvingen[i].desserten.rijstpappen : 0;
 				totaalDameBlanches += inschrijvingen[i].desserten.dameBlanches ? inschrijvingen[i].desserten.dameBlanches : 0;
+
 				aantalBetaald += inschrijvingen[i].isBetaald ? 1 : 0;
 				aantalAanwezig += inschrijvingen[i].isAanwezig ? 1 : 0;
 
@@ -111,8 +112,8 @@ getInschrijvingen = () =>
 				$("#inschrijving-" + i).val(JSON.stringify(inschrijvingen[i]));
 
 				let rowId = i;
-				$("#inschrijving-" + i + '-download').click(() => { this.downloadTicketByRowId(rowId); });
-				$("#inschrijving-" + i + '-delete').click(() => { this.deleteInschrijving(rowId); });
+				$(`#inschrijving-${i}-download`).click(() => { this.downloadTicketByRowId(rowId); });
+				$(`#inschrijving-${i}-delete`).click(() => { this.deleteInschrijving(rowId); });
 				$(`#inschrijving-${i}-isBetaald`).change(() => { this.updateInschrijving(rowId); });
 				$(`#inschrijving-${i}-isAanwezig`).change(() => { this.updateInschrijving(rowId); });
 			}
