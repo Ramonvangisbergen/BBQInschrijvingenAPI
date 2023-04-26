@@ -2,7 +2,8 @@ $(document).ready(() =>
 {
 	this.setOnFormuleAantalChange();
 	this.setOnDessertAantalChange();
-	$('form').submit(onSubmit);
+	this.setOnSnackAantalChange();
+	$('form').submit(this.onSubmit);
 });
 
 setOnFormuleAantalChange = () => 
@@ -56,7 +57,7 @@ setOnFormuleAantalChange = () =>
 
 setOnDessertAantalChange = () => 
 {
-	$(".dessert-aantal").each((i, dessertInput) => 
+	$(".snack").each((i, dessertInput) => 
 		{		
 			dessertInput.addEventListener("change", (event) => 
 			{			
@@ -65,6 +66,30 @@ setOnDessertAantalChange = () =>
 				$("#totaal-desserten").val(this.calculateDessertTotal());
 			});
 		});
+}
+
+setOnSnackAantalChange = () => {
+	$(".snack").each((i, snackInput) => {
+		snackInput.addEventListener("change", (event) => {
+			let totaal = 0;
+			let parent = event.target.dataset.parent;
+
+			$(`[data-parent="${parent}"]`).each((i, sibling) => {
+				totaal += Number(sibling.value);
+			});
+
+			let maxSnacks = $(`#${parent}`).val() * $(`#${parent}`).data("snacks");
+			let msg = "";
+			if (maxSnacks > totaal) {
+				msg = "U kunt nog " + (maxSnacks - totaal) + " snack(s) kiezen";
+			}
+			else if (maxSnacks < totaal) {
+				msg = "U heeft " + (totaal - maxSnacks) + " snacks te veel gekozen";
+			}
+
+			$(`#${parent}-message`).html(`<p>${msg}</p>`);
+		});
+	});
 }
 
 calculateTotalPrice = () => 
@@ -89,28 +114,6 @@ calculateDessertTotal = () =>
 	});
 
 	return totaal;
-}
-
-snackOnChange = (event) => 
-{
-	let totaal = 0;
-	$(`[data-parent="${event.target.dataset.parent}"]`).each((i, sibling) => 
-	{ 
-		totaal += Number(sibling.value);
-	});
-			
-	let maxSnacks = $(`#${event.target.dataset.parent}`).val() * $(`#${event.target.dataset.parent}`).data("snacks");
-	let msg = "";
-	if(maxSnacks > totaal) 
-	{
-		msg = "U kunt nog " + (maxSnacks - totaal) + " snack(s) kiezen";
-	}
-	else if (maxSnacks < totaal) 
-	{
-		msg = "U heeft " + (totaal - maxSnacks) + " snacks te veel gekozen";
-	}
-	
-	$(`#${event.target.dataset.parent}-message`).html(`<p>${msg}</p>`);	
 }
 
 onSubmit = (event) => 

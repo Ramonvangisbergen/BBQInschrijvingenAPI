@@ -132,10 +132,8 @@ getInschrijvingen = () =>
 			$('#aantalBetaald').val(`${aantalBetaald}/${inschrijvingen.length}`);
 			$('#aantalAanwezig').val(`${aantalAanwezig}/${inschrijvingen.length}`);
 			$('#totaalInschrijvingen').val(inschrijvingen.length);
-			
 
 			$('#inschrijvingen').val(JSON.stringify(inschrijvingen));
-
 		}
 		else
 		{
@@ -154,6 +152,7 @@ downloadTicketByRowId = (id) => {
 downloadTicket = (inschrijving) => {
 	let xhrOverride = new XMLHttpRequest();
 	xhrOverride.responseType = 'arraybuffer';
+
 	$.ajax({
 		url: '../BBQInschrijvingen/GenerateTicketPDF/',
 		method: 'POST',
