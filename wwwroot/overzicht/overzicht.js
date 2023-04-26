@@ -179,7 +179,7 @@ downloadTicket = (inschrijving) => {
 }
 
 deleteInschrijving = (rowId) => {
-	if (confirm("Weet u zeker dat u deze inschrijving wilt verwijderen? Een verwijdering is permanent?")) {
+	if (confirm("Weet u zeker dat u deze inschrijving wilt verwijderen? Een verwijdering is permanent!")) {
 		let inschrijving = JSON.parse($("#inschrijving-" + rowId).val());
 		let data = { 'password': $("#password").val(), 'model': inschrijving.id };
 
@@ -198,8 +198,6 @@ deleteInschrijving = (rowId) => {
 				}
 			}
 		});
-	} else {
-
 	}
 }
 
