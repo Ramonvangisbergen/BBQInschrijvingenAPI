@@ -76,7 +76,7 @@ namespace BBQInschrivingen.API.Managers
 
 			ticketHtml += $"<b>Aantal personen:</b> {inschrijving.AantalPersonen}<br/>";
 			ticketHtml += $"<b>Tijdstip reservering:</b> {inschrijving.Reservatie}<br/>";
-			ticketHtml += "---------------------------------------------------------------------------------------------------------------<br/><br/>";
+			ticketHtml += "---------------------------------------------------------------------------------------------------------------<br/>";
 			ticketHtml += "<b>BESTELLING:</b> <br/>";
 			ticketHtml += "---------------------------------------------------------------------------------------------------------------<br/>";
 
@@ -101,7 +101,7 @@ namespace BBQInschrivingen.API.Managers
 
 				if (inschrijving.Formule1.Sates.HasValue && inschrijving.Formule1.Sates.Value > 0)
 				{
-					ticketHtml += $"--satés: {inschrijving.Formule1.Sates.Value}<br/>";
+					ticketHtml += $"--sat&eacute;s: {inschrijving.Formule1.Sates.Value}<br/>";
 				}
 
 				ticketHtml += @"<br/>";
@@ -128,7 +128,7 @@ namespace BBQInschrivingen.API.Managers
 
 				if (inschrijving.Formule2.Sates.HasValue && inschrijving.Formule2.Sates.Value > 0)
 				{
-					ticketHtml += $"--satés: {inschrijving.Formule2.Sates.Value}<br/>";
+					ticketHtml += $"--sat&eacute;s: {inschrijving.Formule2.Sates.Value}<br/>";
 				}
 
 				ticketHtml += @"<br/>";
@@ -140,17 +140,17 @@ namespace BBQInschrivingen.API.Managers
 
 				if (inschrijving.Formule3.Hamburgers.HasValue && inschrijving.Formule3.Hamburgers.Value > 0)
 				{
-					ticketHtml += $"--hamburgers: {inschrijving.Formule3.Hamburgers.Value}<br/>";
+					ticketHtml += $"--veggie hamburgers: {inschrijving.Formule3.Hamburgers.Value}<br/>";
 				}
 
 				if (inschrijving.Formule3.Worsten.HasValue && inschrijving.Formule3.Worsten.Value > 0)
 				{
-					ticketHtml += $"--worsten: {inschrijving.Formule3.Worsten.Value}<br/>";
+					ticketHtml += $"--veggie worsten: {inschrijving.Formule3.Worsten.Value}<br/>";
 				}
 
 				if (inschrijving.Formule3.Balletjes.HasValue && inschrijving.Formule3.Balletjes.Value > 0)
 				{
-					ticketHtml += $"--satés: {inschrijving.Formule3.Balletjes.Value}<br/>";
+					ticketHtml += $"--veggie balletjes: {inschrijving.Formule3.Balletjes.Value}<br/>";
 				}
 
 				ticketHtml += @"<br/>";
@@ -162,17 +162,17 @@ namespace BBQInschrivingen.API.Managers
 
 				if (inschrijving.Formule4.Hamburgers.HasValue && inschrijving.Formule4.Hamburgers.Value > 0)
 				{
-					ticketHtml += $"--hamburgers: {inschrijving.Formule4.Hamburgers.Value}<br/>";
+					ticketHtml += $"--veggie hamburgers: {inschrijving.Formule4.Hamburgers.Value}<br/>";
 				}
 
 				if (inschrijving.Formule4.Worsten.HasValue && inschrijving.Formule4.Worsten.Value > 0)
 				{
-					ticketHtml += $"--worsten: {inschrijving.Formule4.Worsten.Value}<br/>";
+					ticketHtml += $"--veggie worsten: {inschrijving.Formule4.Worsten.Value}<br/>";
 				}
 
 				if (inschrijving.Formule4.Balletjes.HasValue && inschrijving.Formule4.Balletjes.Value > 0)
 				{
-					ticketHtml += $"--satés: {inschrijving.Formule4.Balletjes.Value}<br/>";
+					ticketHtml += $"--veggie balletjes: {inschrijving.Formule4.Balletjes.Value}<br/>";
 				}
 
 				ticketHtml += @"<br/>";

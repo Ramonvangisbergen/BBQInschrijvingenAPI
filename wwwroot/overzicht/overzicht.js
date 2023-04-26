@@ -19,6 +19,8 @@ getInschrijvingen = () =>
 	let totaalChocomousses = 0;
 	let totaalRijstpappen = 0;
 	let totaalDameBlanches = 0;
+	let aantalBetaald = 0;
+	let aantalAanwezig = 0;
 
 	$.get("../BBQInschrijvingen/GetAllInschrijvingen", (response) => {
 		if (response.success && response.data) {
@@ -64,6 +66,8 @@ getInschrijvingen = () =>
 				totaalChocomousses += inschrijvingen[i].desserten.chocomousses ? inschrijvingen[i].desserten.chocomousses : 0;
 				totaalRijstpappen += inschrijvingen[i].desserten.rijstpappen ? inschrijvingen[i].desserten.rijstpappen : 0;
 				totaalDameBlanches += inschrijvingen[i].desserten.dameBlanches ? inschrijvingen[i].desserten.dameBlanches : 0;
+				aantalBetaald += inschrijvingen[i].isBetaald ? 1 : 0;
+				aantalAanwezig += inschrijvingen[i].isAanwezig ? 1 : 0;
 
 				$('#tbl-overzicht tbody').append(
 					`<tr>
@@ -124,6 +128,10 @@ getInschrijvingen = () =>
 			$('#totaalChocomousses').val(totaalChocomousses);
 			$('#totaalRijstpappen').val(totaalRijstpappen);
 			$('#totaalDameBlanches').val(totaalDameBlanches);
+			$('#aantalBetaald').val(`${aantalBetaald}/${inschrijvingen.length}`);
+			$('#aantalAanwezig').val(`${aantalAanwezig}/${inschrijvingen.length}`);
+			$('#totaalInschrijvingen').val(inschrijvingen.length);
+			
 
 			$('#inschrijvingen').val(JSON.stringify(inschrijvingen));
 

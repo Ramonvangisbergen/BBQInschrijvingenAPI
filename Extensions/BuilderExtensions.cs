@@ -14,8 +14,8 @@ namespace BBQInschrivingen.API.Extensions
 			
 			builder.Services.AddControllers();
 			builder.ConfigureDependencyInjection();
-			builder.ConfigureConfig();
-			
+
+			builder.Services.Configure<FileServerConfig>(builder.Configuration.GetSection("FileServer"));
 		}
 
 		private static void ConfigureDependencyInjection(this WebApplicationBuilder builder)
@@ -25,21 +25,6 @@ namespace BBQInschrivingen.API.Extensions
 
 			builder.Services.AddScoped<IConfigManager, ConfigManager>();
 			builder.Services.AddScoped<IDbContext, DbContext>();
-		}
-		private static void ConfigureConfig(this WebApplicationBuilder builder)
-		{
-			string fileServerSettings = "";
-			if (builder.Environment.IsDevelopment())
-			{
-				fileServerSettings = "FileServer_dev";
-			}
-
-			if (builder.Environment.IsProduction())
-			{
-				fileServerSettings = "FileServer";
-			}
-
-			builder.Services.Configure<FileServerConfig>(builder.Configuration.GetSection(fileServerSettings)); ;
 		}
 	}
 }
